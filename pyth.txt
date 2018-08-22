@@ -1,0 +1,21 @@
+strInp=input()
+cnt=int(input())
+outstr=""
+for i in range(cnt):
+    m,n=input().split()
+    if m=='L':
+        strInp=strInp[int(n):]+strInp[:int(n)]
+    else:
+        strInp=strInp[len(strInp)-int(n):]+strInp[:len(strInp)-int(n)]
+    outstr=outstr+strInp[0]
+    outstr = ''.join(sorted(outstr))
+for i in range(0,len(strInp),cnt):
+    tempStr=strInp[i:i+cnt]
+    tempStr=''.join(sorted(tempStr))
+    if outstr == tempStr:
+        print("YES",end ='')
+        break
+else:
+    print("NO",end = '')
+    
+      
